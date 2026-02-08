@@ -131,6 +131,24 @@ ul { list-style: none; }
     background: rgba(255, 255, 255, 0.05);
 }
 
+.lang-switch {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    background: var(--color-accent-glow);
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    padding: 5px 12px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    margin-left: 8px;
+}
+
+.lang-switch:hover {
+    background: rgba(34, 211, 238, 0.25);
+    border-color: var(--color-accent);
+}
+
 .nav-toggle {
     display: none;
     flex-direction: column;
@@ -161,6 +179,14 @@ ul { list-style: none; }
     position: relative;
     overflow: hidden;
     padding: 100px 0 60px;
+}
+
+.hero-bg-image {
+    position: absolute;
+    inset: 0;
+    background: url('images/montreal-hero.jpg') center/cover no-repeat;
+    opacity: 0.15;
+    z-index: 0;
 }
 
 .hero-bg-shapes {
@@ -431,6 +457,33 @@ ul { list-style: none; }
 }
 
 /* ========================================
+   Montreal Background Sections
+   ======================================== */
+.section-montreal {
+    position: relative;
+}
+
+.section-bg-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.07;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.section-montreal .container {
+    position: relative;
+    z-index: 1;
+}
+
+.about-bg {
+    background-image: url('images/montreal-about.jpg');
+}
+
+/* ========================================
    About Section
    ======================================== */
 .about-grid {
@@ -603,6 +656,25 @@ ul { list-style: none; }
     margin-bottom: 16px;
     flex-wrap: wrap;
     gap: 8px;
+}
+
+.timeline-header-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    flex: 1;
+    min-width: 0;
+}
+
+.company-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 6px;
+    flex-shrink: 0;
+    border: 1px solid var(--color-border);
 }
 
 .timeline-role {
