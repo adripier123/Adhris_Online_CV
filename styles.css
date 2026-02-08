@@ -114,14 +114,14 @@ ul { list-style: none; }
 
 .nav-links {
     display: flex;
-    gap: 8px;
+    gap: 4px;
 }
 
 .nav-links a {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
     color: var(--color-text-muted);
-    padding: 8px 16px;
+    padding: 8px 14px;
     border-radius: var(--radius-sm);
     transition: var(--transition);
 }
@@ -330,6 +330,17 @@ ul { list-style: none; }
     pointer-events: none;
 }
 
+.hero-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 24px;
+    border: 3px solid transparent;
+    background: linear-gradient(var(--color-bg-alt), var(--color-bg-alt)) padding-box,
+                linear-gradient(135deg, var(--color-primary), var(--color-accent)) border-box;
+}
+
 .hero-avatar {
     width: 120px;
     height: 120px;
@@ -412,6 +423,13 @@ ul { list-style: none; }
     margin: 16px auto 0;
 }
 
+.section-subtitle {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin: -36px 0 40px;
+}
+
 /* ========================================
    About Section
    ======================================== */
@@ -476,12 +494,46 @@ ul { list-style: none; }
 }
 
 /* ========================================
+   Experience Era Headers
+   ======================================== */
+.experience-era {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-text-heading);
+    margin-bottom: 32px;
+    margin-top: 56px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.experience-era:first-of-type {
+    margin-top: 0;
+}
+
+.era-badge {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    background: var(--color-accent-glow);
+    border: 1px solid rgba(34, 211, 238, 0.25);
+    padding: 4px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+/* ========================================
    Timeline / Experience
    ======================================== */
 .timeline {
     position: relative;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 0;
 }
 
 .timeline::before {
@@ -498,7 +550,7 @@ ul { list-style: none; }
 .timeline-item {
     position: relative;
     padding-left: 60px;
-    margin-bottom: 48px;
+    margin-bottom: 36px;
 }
 
 .timeline-item:last-child {
@@ -518,6 +570,10 @@ ul { list-style: none; }
     transition: var(--transition);
 }
 
+.section-alt .timeline-marker {
+    background: var(--color-bg-alt);
+}
+
 .timeline-item:hover .timeline-marker {
     background: var(--color-primary);
     box-shadow: 0 0 12px rgba(99, 102, 241, 0.5);
@@ -527,8 +583,12 @@ ul { list-style: none; }
     background: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    padding: 28px;
+    padding: 24px;
     transition: var(--transition);
+}
+
+.section-alt .timeline-content {
+    background: var(--color-bg-alt);
 }
 
 .timeline-item:hover .timeline-content {
@@ -546,7 +606,7 @@ ul { list-style: none; }
 }
 
 .timeline-role {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     font-weight: 600;
     color: var(--color-text-heading);
 }
@@ -557,9 +617,20 @@ ul { list-style: none; }
     margin-top: 4px;
 }
 
+.industry-tag {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    background: var(--color-accent-glow);
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
 .timeline-date {
     font-family: var(--font-mono);
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     color: var(--color-accent);
     background: var(--color-accent-glow);
     padding: 4px 12px;
@@ -576,7 +647,7 @@ ul { list-style: none; }
     position: relative;
     padding-left: 20px;
     margin-bottom: 8px;
-    font-size: 0.93rem;
+    font-size: 0.9rem;
     color: var(--color-text-muted);
     line-height: 1.6;
 }
@@ -599,17 +670,65 @@ ul { list-style: none; }
 }
 
 .tag {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     font-weight: 500;
     color: var(--color-primary-light);
     background: rgba(99, 102, 241, 0.1);
     border: 1px solid rgba(99, 102, 241, 0.25);
-    padding: 4px 12px;
+    padding: 3px 10px;
     border-radius: 20px;
 }
 
 /* ========================================
-   Skills Section
+   Certifications Section
+   ======================================== */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cert-card {
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 32px 24px;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+}
+
+.cert-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.cert-icon {
+    color: #f59e0b;
+    margin-bottom: 16px;
+}
+
+.cert-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-heading);
+    margin-bottom: 10px;
+}
+
+.cert-version {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--color-accent);
+    background: var(--color-accent-glow);
+    padding: 4px 12px;
+    border-radius: var(--radius-sm);
+}
+
+/* ========================================
+   Skills Section (tag-based)
    ======================================== */
 .skills-grid {
     display: grid;
@@ -618,11 +737,15 @@ ul { list-style: none; }
 }
 
 .skill-category {
-    background: var(--color-bg-alt);
+    background: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     padding: 28px;
     transition: var(--transition);
+}
+
+.section-alt .skill-category {
+    background: var(--color-bg);
 }
 
 .skill-category:hover {
@@ -644,43 +767,27 @@ ul { list-style: none; }
     flex-shrink: 0;
 }
 
-.skill-list {
+.skill-tags {
     display: flex;
-    flex-direction: column;
-    gap: 14px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.skill-item {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+.skill-tag {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--color-text);
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: var(--transition);
 }
 
-.skill-name {
-    font-size: 0.88rem;
-    color: var(--color-text-muted);
-    min-width: 140px;
-    flex-shrink: 0;
-}
-
-.skill-bar {
-    flex: 1;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.skill-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-    border-radius: 3px;
-    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-    width: 0;
-}
-
-.skill-fill.animated {
-    /* width set via inline style */
+.skill-tag:hover {
+    background: rgba(99, 102, 241, 0.15);
+    border-color: var(--color-primary-light);
+    color: var(--color-primary-light);
 }
 
 /* ========================================
@@ -692,8 +799,14 @@ ul { list-style: none; }
     gap: 24px;
 }
 
+.education-single {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 .education-card {
-    background: var(--color-bg);
+    background: var(--color-bg-alt);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     padding: 32px 24px;
@@ -707,28 +820,92 @@ ul { list-style: none; }
     box-shadow: var(--shadow-md);
 }
 
+.education-card-wide {
+    padding: 40px 48px;
+}
+
 .education-icon {
     color: var(--color-accent);
     margin-bottom: 16px;
 }
 
 .education-card h3 {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-text-heading);
+    margin-bottom: 8px;
+}
+
+.education-school {
+    font-size: 1rem;
+    color: var(--color-primary-light);
+    margin-bottom: 8px;
+}
+
+.education-year {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    margin-bottom: 14px;
+}
+
+.education-detail {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+/* ========================================
+   Languages Section
+   ======================================== */
+.languages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.language-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 28px 20px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.language-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.language-flag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    margin-bottom: 12px;
+}
+
+.language-card h3 {
+    font-size: 1rem;
     font-weight: 600;
     color: var(--color-text-heading);
     margin-bottom: 6px;
 }
 
-.education-school {
-    font-size: 0.9rem;
-    color: var(--color-primary-light);
-    margin-bottom: 12px;
-}
-
-.education-detail {
-    font-size: 0.88rem;
+.language-level {
+    font-size: 0.82rem;
     color: var(--color-text-muted);
-    line-height: 1.6;
 }
 
 /* ========================================
@@ -787,8 +964,9 @@ cite {
     background: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    padding: 20px 32px;
+    padding: 20px 28px;
     font-weight: 500;
+    font-size: 0.93rem;
     color: var(--color-text);
     transition: var(--transition);
 }
@@ -866,6 +1044,15 @@ cite {
         max-width: 400px;
         margin: 0 auto;
     }
+
+    .cert-grid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+    }
+
+    .languages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 640px) {
@@ -929,6 +1116,12 @@ cite {
         flex-direction: column;
     }
 
+    .experience-era {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 1.1rem;
+    }
+
     blockquote {
         font-size: 1.1rem;
     }
@@ -937,23 +1130,22 @@ cite {
         padding: 28px;
     }
 
-    .hero-avatar {
-        width: 90px;
-        height: 90px;
-        font-size: 2rem;
+    .hero-photo {
+        width: 140px;
+        height: 140px;
     }
 
-    .skill-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
+    .languages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
     }
 
-    .skill-name {
-        min-width: auto;
+    .education-card-wide {
+        padding: 28px 20px;
     }
 
-    .skill-bar {
-        width: 100%;
+    .contact-card {
+        padding: 16px 20px;
+        font-size: 0.85rem;
     }
 }
