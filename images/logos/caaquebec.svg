@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
   <rect width="128" height="128" rx="16" fill="#003F72"/>
   <text x="64" y="66" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" fill="#CF202F" letter-spacing="2">CAA</text>
-  <text x="64" y="92" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="rgba(255,255,255,0.8)">Qu&eacute;bec</text>
+  <text x="64" y="92" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="rgba(255,255,255,0.8)">Qu&#233;bec</text>
 </svg>
